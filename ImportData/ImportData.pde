@@ -1,5 +1,3 @@
-/* TextFile Sender: Written by Scott C on 5th April 2013
- using Processing Version 2.0b8 */
 
 import processing.serial.*;
 import java.io.*;
@@ -25,13 +23,9 @@ int p = 0;
 
 void setup(){
  comPort = new Serial(this, Serial.list()[0], 9600);
- //background(255,0,0); //Start with a Red background
- textFileLines =loadStrings("DATA PATH!!!! NEED TO BE CHANGE");
+ textFileLines =loadStrings("DATA PATH!!!! NEED TO BE CHANGE eg. C:/user/file.csv");
  numLines = textFileLines.length;
- //for(int i = 0; i < numLines; i++){
- //  println(textFileLines[i]);
- //}
- //println(numLines);
+
  
  comPort.write("100000");
      
@@ -64,18 +58,5 @@ void setup(){
    tempLine++;
  }
  println("end");
- 
- //PLX = new Serial(this, "COM6", 14400);
- 
- //PLX.write("1000");
- 
- //PLX.write("CLEARDATA"); //clears up any data left from previous projects
- //PLX.write("LABEL,Time,timer,V,S,..."); //always write LABEL, so excel knows the next things will be the names of the columns (instead of Acolumn you could write Time for instance)
- //PLX.write("RESETTIMER"); //resets timer to 0
- 
- //while(true){
- //    String inBuffer = comPort.readStringUntil('\n');
- //    PLX.write(inBuffer);
- //}
    
 }
