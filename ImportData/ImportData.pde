@@ -26,7 +26,7 @@ int p = 0;
 void setup(){
  comPort = new Serial(this, Serial.list()[0], 9600);
  //background(255,0,0); //Start with a Red background
- textFileLines =loadStrings("D:/4444/Study/UA/ECE/SeniorDesign/test/testIn.csv");
+ textFileLines =loadStrings("DATA PATH!!!! NEED TO BE CHANGE");
  numLines = textFileLines.length;
  //for(int i = 0; i < numLines; i++){
  //  println(textFileLines[i]);
@@ -57,12 +57,7 @@ void setup(){
      String inBuffer = comPort.readStringUntil('\n');
      if(inBuffer != null){
        print(inBuffer);
-       //if(tempLine != 0){
-       //inString = inString+" ";
-       //}
-       inString = inString + lineItems[i] + "," + inBuffer;
-        String[] inS = split(inString, " ");
-        saveStrings("D:/4444/Study/UA/ECE/SeniorDesign/test/testOut.csv", inS);
+
      }
      
    }
